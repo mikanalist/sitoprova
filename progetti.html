@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progetti</title>
+    <style>
+        /* Stili per l'intestazione e il logo */
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: black;
+            position: relative;
+        }
+        .logo-container {
+            margin-right: auto; /* Spinge il logo completamente a sinistra */
+        }
+        .logo {
+            width: 60px;
+            height: auto;
+            cursor: pointer;
+        }
+        h1 {
+            color: darkgreen;
+            margin: 0;
+            font-size: 24px;
+            text-align: center;
+            flex-grow: 1; /* Centra il testo rispetto all'intera larghezza */
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 20px;
+            background-color: white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .dropdown-menu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+        }
+        .dropdown-menu a:hover {
+            background-color: #ddd;
+        }
+        body {
+            background-color: rgb(185, 178, 178);
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Garantisce che il footer sia sempre in fondo */
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        .section {
+            padding: 20px 0;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto; /* Spinge il footer in basso */
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline-block;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            color: darkgreen;
+        }
+        .language-selector {
+            display: flex;
+            gap: 10px; /* Spaziatura tra le bandiere */
+        }
+        .language-selector span {
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <!-- Logo spostato a sinistra -->
+            <div class="logo-container">
+                <img src="logo_mm.png" alt="Logo MM" class="logo" id="logo">
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#contact">Contatti</a>
+                </div>
+            </div>
+            <!-- Titolo centrato -->
+            <h1>Progetti</h1>
+            <!-- Selettore lingua senza bandierine -->
+            <div class="language-selector">
+                <span onclick="changeLanguage('it')">Italiano</span>
+                <span onclick="changeLanguage('en')">English</span>
+                <span onclick="changeLanguage('fr')">Français</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="notebooks" class="section">
+        <div class="container">
+            <h2>Progetti Notebook</h2>
+            <ul>
+                <li>
+                    <a href="notebooks/progetto_finale_malattiecardiache.html" target="_blank">progetto malattiecardiache</a>
+                    <p>Un progetto per analizzare i dati delle vendite usando Python e Pandas.</p>
+                </li>
+                <li>
+                    <a href="notebooks/pandatitanic.html" target="_blank">progetto Superstiti del titanic</a>
+                    <p>Un progetto per analizzare i dati delle vendite usando Python e Pandas.</p>
+                </li>
+                <li>
+                    <a href="notebooks/scikit-learn.html" target="_blank">Previsioni con modelli di Machine Learning</a>
+                    <p>Utilizzo di Scikit-learn .</p>
+                </li>
+                <li>
+                    <a href="notebooks/webscraping.html" target="_blank">Web scrapping e creazione csv</a>
+                    <p>Utilizzo librerie per webscraping.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Michele Maino. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript per gestire il menu a tendina
+        const logo = document.getElementById('logo');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        // Toggle del menu quando si clicca sul logo
+        logo.addEventListener('click', () => {
+            const isMenuOpen = dropdownMenu.style.display === 'block';
+            dropdownMenu.style.display = isMenuOpen ? 'none' : 'block';
+        });
+
+        // Chiude il menu quando si clicca fuori
+        document.addEventListener('click', (event) => {
+            if (!logo.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+    </script>
+    <script>
+        function changeLanguage(lang) {
+            alert("Lingua selezionata: " + lang.toUpperCase());
+            // Logica per cambiare lingua (es. caricamento di contenuti tradotti).
+        }
+    </script>
+</body>
+</html>

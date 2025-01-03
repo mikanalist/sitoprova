@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.MicheleAnalyst.com</title>
+    <style>
+        body {
+            background-color: rgb(185, 178, 178);
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            flex: 1;
+        }
+        .section {
+            padding: 20px 0;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+        .cv-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .cv-button {
+            padding: 10px 20px;
+            background-color: darkgreen;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .cv-button:hover {
+            background-color: green;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: black;
+            position: relative;
+        }
+        .logo-container {
+            margin-right: auto;
+        }
+        .logo {
+            width: 60px;
+            height: auto;
+            cursor: pointer;
+        }
+        h1 {
+            color: darkgreen;
+            margin: 0;
+            font-size: 24px;
+            text-align: center;
+            flex-grow: 1;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 20px;
+            background-color: white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .dropdown-menu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+        }
+        .dropdown-menu a:hover {
+            background-color: #ddd;
+        }
+        .language-selector {
+            display: flex;
+            gap: 10px;
+        }
+        .language-selector img {
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            border: 1px solid white;
+            border-radius: 3px;
+            transition: transform 0.2s;
+        }
+        .language-selector img:hover {
+            transform: scale(1.1);
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.2s;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        /* Stile per la sezione Servizi */
+        #services .service-box {
+            background-color: lightgray;
+            border: 1px solid darkgreen;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        #services .service-box h3 {
+            color: darkgreen;
+            margin-bottom: 10px;
+        }
+        #services ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #services ul li {
+            background-color: darkgreen;
+            color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="logo_mm.png" alt="Logo MM" class="logo" id="logo">
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="index.html">Home</a>
+                    <a href="progetti.html">Progetti</a>
+                    <a href="#services">Servizi</a>
+                    <a href="#contact">Contatti</a>
+                </div>
+            </div>
+            <h1>Michele Maino</h1>
+            <div class="language-selector">
+                <img src="italian-flag.png" alt="Italiano" title="Italiano" onclick="changeLanguage('it')">
+                <img src="english-flag.png" alt="English" title="English" onclick="changeLanguage('en')">
+                <img src="french-flag.png" alt="Français" title="Français" onclick="changeLanguage('fr')">
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Chi sono</h2>
+            <p>Data Analyst con esperienza nell'utilizzo di Python e delle principali librerie per l'analisi dei dati, come Pandas, NumPy e Scikit-learn. Specializzato nella manipolazione, pulizia e visualizzazione dei dati per supportare decisioni aziendali strategiche | piu info sul mio CV </p>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Competenze</h2>
+            <ul>
+                <li><strong>Linguaggi di Programmazione:</strong> Python, HTML, CSS</li>
+                <li><strong>Analisi Dati:</strong> Pandas, NumPy, SciPy</li>
+                <li><strong>Visualizzazione Dati:</strong> Matplotlib, Seaborn</li>
+                <li><strong>Machine Learning:</strong> Scikit-learn, TensorFlow (base)</li>
+                <li><strong>Database:</strong> SQL (SQLite, PostgreSQL, MySQL)</li>
+                <li><strong>Strumenti di Gestione Progetti:</strong> Jupyter Notebook, Git, Excel avanzato</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Servizi</h2>
+            <p>Offro consulenza gratuita iniziale e piani di abbonamento personalizzati per le tue esigenze di analisi dati.</p>
+            <div class="service-box">
+                <h3><a href="https://www.instagram.com/micheleanalyst" target="_blank">Consulenza Gratuita</a></h3>
+                <p>Una sessione iniziale per discutere i tuoi obiettivi e identificare le tue esigenze di analisi dati.</p>
+            </div>
+            <div class="service-box">
+                <h3>Piani di Abbonamento</h3>
+                <ul>
+                    <li><a href="https://wa.me/+393773987778" target="_blank"><strong>Base:</strong> Analisi mensile con report dettagliato. €50/mese.</a></li>
+                    <li><a href="https://wa.me/+393773987778" target="_blank"><strong>Avanzato:</strong> Analisi settimanale e consulenza dedicata. €150/mese.</a></li>
+                    <li><a href="https://wa.me/+393773987778" target="_blank"><strong>Premium:</strong> Supporto continuo con analisi avanzate. €300/mese.</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="cv" class="section cv-section">
+        <div class="container">
+            <h2>Scarica il mio CV</h2>
+            <a href="CV/Michele_Maino_CV.pdf" download class="cv-button">Download CV</a>
+        </div>
+    </section>
+
+    <section id="contact" class="section" align='center'>
+        <div class="container">
+            <h2>Contatti</h2>
+            <p><strong>Email:</strong> <a href="mailto:mwork8228@gmail.com">mwork8228@gmail.com</a><br>
+            <strong>Indirizzo:</strong> Altamura | BA<br>
+            <strong>Telefono:</strong> <a href="tel:+393773987778">+39 377 398 7778</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Michele Maino. Tutti i diritti riservati.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/micheleanalyst" target="_blank">
+                    <img src="instagram-icon.png" alt="Instagram" title="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com/in/MicheleMaino" target="_blank">
+                    <img src="linkedin-icon.png" alt="LinkedIn" title="LinkedIn" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const logo = document.getElementById('logo');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        logo.addEventListener('click', () => {
+            const isMenuOpen = dropdownMenu.style.display === 'block';
+            dropdownMenu.style.display = isMenuOpen ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!logo.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+
+        function changeLanguage(lang) {
+            alert("Lingua selezionata: " + lang.toUpperCase());
+        }
+    </script>
+</body>
+</html>

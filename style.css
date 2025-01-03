@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+
+}
+
+.container {
+    overflow: hidden;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section {
+    margin: 20px 0;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries */
+
+/* Per dispositivi con larghezza massima di 768px (tablet e smartphone) */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Rende il menu verticale */
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* Riduce la dimensione del titolo */
+    }
+
+    .container {
+        width: 100%; /* Usa tutta la larghezza disponibile */
+    }
+}
+
+/* Per dispositivi molto piccoli (max 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Riduce leggermente il testo */
+    }
+
+    nav ul {
+        gap: 5px; /* Riduce ulteriormente lo spazio tra i link */
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+}
