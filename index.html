@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>www.MicheleAnalyst.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: rgb(185, 178, 178);
+            /*background-color: rgb(185, 178, 178);*/
+            background-color: rgb(183, 177, 177); /* Colore di sfondo */
+            background-image: url('sfondo.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif; 
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -49,23 +55,32 @@
             align-items: center;
             justify-content: space-between;
             padding: 10px 20px;
+            height: 40px;
             background-color: black;
             position: relative;
         }
         .logo-container {
             margin-right: auto;
+            margin-left: auto;
+            
         }
         .logo {
-            width: 60px;
+            width: 70px;
             height: auto;
             cursor: pointer;
         }
         h1 {
             color: darkgreen;
             margin: 0;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700; /* Bold */
             font-size: 24px;
             text-align: center;
             flex-grow: 1;
+        }
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700; /* Bold */ 
         }
         .dropdown-menu {
             display: none;
@@ -127,7 +142,7 @@
             text-align: center;
         }
         #services .service-box h3 {
-            color: darkgreen;
+            color: rgb(0, 8, 0);
             margin-bottom: 10px;
         }
         #services ul {
@@ -135,8 +150,8 @@
             padding: 0;
         }
         #services ul li {
-            background-color: darkgreen;
-            color: white;
+            background-color: rgb(247, 254, 247);
+            color: rgb(103, 45, 45);
             padding: 10px;
             margin: 10px 0;
             border-radius: 5px;
@@ -158,11 +173,9 @@
                 </div>
             </div>
             <h1>Michele Maino</h1>
-            <div class="language-selector">
-                <img src="italian-flag.png" alt="Italiano" title="Italiano" onclick="changeLanguage('it')">
-                <img src="english-flag.png" alt="English" title="English" onclick="changeLanguage('en')">
-                <img src="french-flag.png" alt="Français" title="Français" onclick="changeLanguage('fr')">
-            </div>
+
+
+
         </div>
     </header>
 
