@@ -7,8 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
-            /*background-color: rgb(185, 178, 178);*/
-            background-color: rgb(183, 177, 177); /* Colore di sfondo */
+            background-color: rgb(0, 0, 0, 0.2); /* Colore di sfondo */
             background-image: url('sfondo.png');
             background-size: cover;
             background-position: center;
@@ -19,6 +18,11 @@
             flex-direction: column;
             min-height: 100vh;
         }
+        a:-webkit-any-link {
+            color: #004B49 ;
+            cursor: pointer;
+            text-decoration: underline;
+        }
         .container {
             width: 80%;
             margin: auto;
@@ -28,8 +32,8 @@
             padding: 20px 0;
         }
         footer {
-            background-color: black;
-            color: white;
+            background-color: rgba(0, 0, 0, 0.1);
+            color: rgb(12, 10, 10);
             text-align: center;
             padding: 10px 0;
             margin-top: auto;
@@ -48,38 +52,55 @@
             transition: background-color 0.3s;
         }
         .cv-button:hover {
-            background-color: green;
+            background-color: #004B49;
         }
         .header-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 10px 20px;
-            height: 40px;
-            background-color: black;
+            height: 60px; /* Aumenta l'altezza dell'header */
+            background-color: rgba(0, 0, 0, 0.2);
             position: relative;
         }
-        .logo-container {
-            margin-right: auto;
-            margin-left: auto;
-            
-        }
+
         .logo {
-            width: 70px;
-            height: auto;
+            width: 90px; /* Aumenta la larghezza del logo */
+            height: auto; /* Mantieni l'aspect ratio */
+            cursor: pointer;
+
+
+        }
+
+        .logo:hover {
+            cursor: pointer;
+            transform: scale(1.1);  /* Leggera ingrandimento del logo */
+            transition: transform 0.3s;
+        }
+
+        .menu-icon {
+            display: none;  /* Nasconde l'icona per dispositivi più grandi */
+            font-size: 30px;
+            color: white;
             cursor: pointer;
         }
+
+        .logo-container:hover .menu-icon {
+            display: block;  /* Mostra l'icona quando il logo viene passato sopra */
+        }
+
         h1 {
-            color: darkgreen;
+            color: #174949; /* Titoli in Midnight Green */
             margin: 0;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Comfortaa';
             font-weight: 700; /* Bold */
             font-size: 24px;
             text-align: center;
             flex-grow: 1;
         }
         h2 {
-            font-family: 'Roboto', sans-serif;
+            color: #174949;
+            font-family: 'Merriweather', serif;
             font-weight: 700; /* Bold */ 
         }
         .dropdown-menu {
@@ -92,6 +113,7 @@
             z-index: 1;
             border-radius: 5px;
             overflow: hidden;
+            transition: opacity 0.3s ease;
         }
         .dropdown-menu a {
             color: black;
@@ -134,8 +156,8 @@
         }
         /* Stile per la sezione Servizi */
         #services .service-box {
-            background-color: lightgray;
-            border: 1px solid darkgreen;
+            background-color:  rgba(73, 70, 70, 0.093);
+            border: 1px solid black;
             border-radius: 10px;
             padding: 20px;
             margin: 20px 0;
@@ -150,7 +172,7 @@
             padding: 0;
         }
         #services ul li {
-            background-color: rgb(247, 254, 247);
+            background-color: rgba(73, 70, 70, 0.093);
             color: rgb(103, 45, 45);
             padding: 10px;
             margin: 10px 0;
@@ -158,13 +180,47 @@
             text-align: center;
             font-weight: bold;
         }
+        p, li {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Galleria certificati PDF */
+        .certificati-container {
+            display: flex;
+            flex-wrap: wrap; /* Permette di andare a capo se lo spazio è insufficiente */
+            gap: 15px; /* Spaziatura tra i certificati */
+            justify-content: center; /* Allinea al centro */
+        }
+        .certificato {
+            max-width: 200px;
+            height: auto;
+            border: 1px solid #ddd; /* (Opzionale) Aggiunge un bordo leggero */
+            border-radius: 5px; /* (Opzionale) Angoli arrotondati */
+            display: block; /* Rimuove lo spazio sotto le immagini */
+        }
+
+        @media (max-width: 768px) {
+            .certificato {
+                max-width: 45%;
+                min-width: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .certificato {
+                max-width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
             <div class="logo-container">
-                <img src="logo_mm.png" alt="Logo MM" class="logo" id="logo">
+                <img src="logo_mm.png" class="logo" id="logo" title="Clicca per aprire il menu" alt="Logo Michele Analyst">
+                <div class="menu-icon" id="menuIcon" title="Menu">
+                    <span>&#9776;</span> <!-- Icona hamburger -->
+                </div>
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="index.html">Home</a>
                     <a href="progetti.html">Progetti</a>
@@ -172,17 +228,14 @@
                     <a href="#contact">Contatti</a>
                 </div>
             </div>
-            <h1>Michele Maino</h1>
-
-
-
+            <h1>ANALYSTM</h1>
         </div>
     </header>
 
     <section id="about" class="section">
         <div class="container">
             <h2>Chi sono</h2>
-            <p>Data Analyst con esperienza nell'utilizzo di Python e delle principali librerie per l'analisi dei dati, come Pandas, NumPy e Scikit-learn. Specializzato nella manipolazione, pulizia e visualizzazione dei dati per supportare decisioni aziendali strategiche | piu info sul mio CV </p>
+            <p>Data Analyst con esperienza nell'utilizzo di Python e delle principali librerie per l'analisi dei dati, come Pandas, NumPy e Scikit-learn. Specializzato nella manipolazione, pulizia e visualizzazione dei dati per supportare decisioni aziendali strategiche | più info sul mio CV </p>
         </div>
     </section>
 
@@ -195,25 +248,25 @@
                 <li><strong>Visualizzazione Dati:</strong> Matplotlib, Seaborn</li>
                 <li><strong>Machine Learning:</strong> Scikit-learn, TensorFlow (base)</li>
                 <li><strong>Database:</strong> SQL (SQLite, PostgreSQL, MySQL)</li>
-                <li><strong>Strumenti di Gestione Progetti:</strong> Jupyter Notebook, Git, Excel avanzato</li>
+                <li><strong>Strumenti di Gestione Progetti:</strong> Jupyter Notebook, Power BI</li>
             </ul>
         </div>
     </section>
 
-    <section id="services" class="section">
+    <section  id="services" class="section">
         <div class="container">
             <h2>Servizi</h2>
             <p>Offro consulenza gratuita iniziale e piani di abbonamento personalizzati per le tue esigenze di analisi dati.</p>
             <div class="service-box">
-                <h3><a href="https://www.instagram.com/micheleanalyst" target="_blank">Consulenza Gratuita</a></h3>
+                <h3><a  href="https://www.instagram.com/mm_analyst" target="_blank" rel="noopener noreferrer">Consulenza Gratuita</a></h3>
                 <p>Una sessione iniziale per discutere i tuoi obiettivi e identificare le tue esigenze di analisi dati.</p>
             </div>
             <div class="service-box">
                 <h3>Piani di Abbonamento</h3>
                 <ul>
-                    <li><a href="https://wa.me/+393773987778" target="_blank"><strong>Base:</strong> Analisi mensile con report dettagliato. €50/mese.</a></li>
-                    <li><a href="https://wa.me/+393773987778" target="_blank"><strong>Avanzato:</strong> Analisi settimanale e consulenza dedicata. €150/mese.</a></li>
-                    <li><a href="https://wa.me/+393773987778" target="_blank"><strong>Premium:</strong> Supporto continuo con analisi avanzate. €300/mese.</a></li>
+                    <li><a href="https://wa.me/+393773987778" target="_blank" rel="noopener noreferrer"><strong>Base:</strong> Analisi mensile con report dettagliato. €50/mese.</a></li>
+                    <li><a href="https://wa.me/+393773987778" target="_blank" rel="noopener noreferrer"><strong>Avanzato:</strong> Analisi settimanale e consulenza dedicata. €150/mese.</a></li>
+                    <li><a href="https://wa.me/+393773987778" target="_blank" rel="noopener noreferrer"><strong>Premium:</strong> Supporto continuo con analisi avanzate. €300/mese.</a></li>
                 </ul>
             </div>
         </div>
@@ -226,6 +279,15 @@
         </div>
     </section>
 
+    <!-- Sezione Certificati PDF -->
+    <div class="certificati-container">
+        <img src="crt1.jpg" alt="Certificato 1" class="certificato">
+        <img src="crt2.jpg" alt="Certificato 2" class="certificato">
+        <img src="crt3.jpg" alt="Certificato 3" class="certificato">
+        <img src="crt4.jpg" alt="Certificato 4" class="certificato">
+        <img src="crt5.jpg" alt="Certificato 5" class="certificato">
+    </div>
+
     <section id="contact" class="section" align='center'>
         <div class="container">
             <h2>Contatti</h2>
@@ -237,13 +299,27 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Michele Maino. Tutti i diritti riservati.</p>
+            <p>&copy; 2025 ANALYSTM. Tutti i diritti riservati.</p>
             <div class="social-icons">
-                <a href="https://www.instagram.com/micheleanalyst" target="_blank">
+                <a href="https://www.instagram.com/mm_analyst" target="_blank" rel="noopener noreferrer">
                     <img src="instagram-icon.png" alt="Instagram" title="Instagram" class="social-icon">
                 </a>
-                <a href="https://www.linkedin.com/in/MicheleMaino" target="_blank">
+                <a href="https://www.linkedin.com/in/MicheleMaino" target="_blank" rel="noopener noreferrer">
                     <img src="linkedin-icon.png" alt="LinkedIn" title="LinkedIn" class="social-icon">
+                </a>
+                <a href="https://www.tiktok.com/@michele_maino3" target="_blank" rel="noopener noreferrer">
+                    <img src="tiktok-icon.png" alt="TikTok" title="TikTok" class="social-icon">
+                </a>
+                
+                <a href="https://www.facebook.com/Mainoo Mikele" target="_blank" rel="noopener noreferrer">
+                    <img src="facebook-icon.png" alt="Facebook" title="Facebook" class="social-icon">
+                </a>
+                
+                <a href="https://www.reddit.com/user/Mike" target="_blank" rel="noopener noreferrer">
+                    <img src="reddit-icon.png" alt="Reddit" title="Reddit" class="social-icon">
+                </a>
+                <a href="https://github.com/mikanalyst" target="_blank" rel="noopener noreferrer">
+                    <img src="github-icon.png" alt="GitHub" title="GitHub" class="social-icon">
                 </a>
             </div>
         </div>
@@ -256,11 +332,13 @@
         logo.addEventListener('click', () => {
             const isMenuOpen = dropdownMenu.style.display === 'block';
             dropdownMenu.style.display = isMenuOpen ? 'none' : 'block';
+            dropdownMenu.style.opacity = isMenuOpen ? '0' : '1'; // Transition effect
         });
 
         document.addEventListener('click', (event) => {
             if (!logo.contains(event.target) && !dropdownMenu.contains(event.target)) {
                 dropdownMenu.style.display = 'none';
+                dropdownMenu.style.opacity = '0'; // Hide with transition
             }
         });
 
