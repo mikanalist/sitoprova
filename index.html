@@ -6,14 +6,17 @@
     <title>www.MicheleAnalyst.com</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WCTM0QPD28"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WCTM0QPD28');
-</script>
+    <script type="text/javascript">
+        var appInsights=window.appInsights||function(config){
+            function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}} 
+            var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;
+            for(s.src=config.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.queue=[],i=["Event","Exception","Metric","PageView","Trace","Dependency"];i.length;)r("track"+i.pop());
+            return config.disableExceptionTracking||(i="onerror",r(""+i),f=e[i],e[i]=function(config,r,o,s,u){var i=f&&f(config,r,o,s,u);return i!==!0&&t[""+i](config,r,o,s,u),i}),t
+        }({
+            instrumentationKey:"<a7a3ee0b-1118-4676-b856-e83a0f881ff1>"
+        });
+        window.appInsights=appInsights,appInsights.queue&&appInsights.queue.length&&appInsights.trackPageView();
+    </script>
     <style>
         body {
             background-color: rgb(0, 0, 0, 0.2); /* Colore di sfondo */
